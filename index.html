@@ -15,7 +15,9 @@
   .cell{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--dim);font-size:12px}
   .sprite{width:96px;height:96px;background:url(character.png) no-repeat;image-rendering:pixelated;transform:scale(3);transform-origin:top center;margin-bottom:200px}
   .note{font-size:13px;color:var(--dim);max-width:520px}
-  .tag{display:inline-block;margin-top:14px;padding:6px 14px;border:1px solid #3a2f3e;border-radius:999px;font-size:12px;letter-spacing:.2em;color:#d7a1ab}
+  .tag{display:inline-block;margin-top:14px;padding:8px 18px;border:1px solid #3a2f3e;border-radius:999px;font-size:13px;letter-spacing:.1em;color:#d7a1ab;text-decoration:none}
+  .tag.play{background:#2a1925;border-color:#bb302f;color:#ffd9de}
+  .tag.play:hover{background:#3a2030}
 </style>
 </head>
 <body>
@@ -29,7 +31,8 @@
   <div class="cell"><div class="sprite" data-first="111" data-count="12" data-fps="12"></div>월식</div>
 </div>
 <p class="note">패링으로 적의 공세를 끊고, 흑월장으로 내상을 쌓아, 만월로 터뜨리는 2D 액션. 개발 중.</p>
-<span class="tag">COMING SOON</span>
+<a class="tag play" href="play/">▶ 브라우저에서 플레이 (프로토타입)</a>
+<p class="note" style="margin-top:10px">PC 키보드 전용. A/D 이동 · W 점프 · Shift 대시 · Space 패링 · J 공격 · E 강화 만월 · Q 월식 · 1~5 훈련 적 · R 초기화</p>
 <script>
   // 96px cells, 8 columns. Each sprite plays slots first..first+count-1 at its fps.
   document.querySelectorAll('.sprite').forEach(el=>{
